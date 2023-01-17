@@ -141,11 +141,11 @@ def user_stats(df):
             print(gender_types)
             birth_year = df['Birth Year']
             common_year = birth_year.mode()[0]
-            print("The most common birth year:", common_year)
+            print("The most common birth year:", int(common_year))
             most_recent = birth_year.max()
-            print("The most recent birth year:", most_recent)
+            print("The most recent birth year:", int(most_recent))
             earliest_year = birth_year.min()
-            print("The earliest birth year:", earliest_year)
+            print("The earliest birth year:", int(earliest_year))
             break
         else:
             print('Gender Stats can\'t be determined')
@@ -164,6 +164,7 @@ def user_stats(df):
         if view_display == "no":
             keep_asking = False
 
+
 def main():
     while True:
         city, month, day = get_filters()
@@ -177,6 +178,7 @@ def main():
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
+
 
 if __name__ == "__main__":
     main()
