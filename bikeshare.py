@@ -40,7 +40,7 @@ def get_filters():
 
     while True:
         day = input('Please enter a day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or Sunday?'
-                    'or just say \'all\' to see all days. \n> ')
+                    ' or just say \'all\' to see all days. \n> ')
         day = day.lower()
         if day in Days:
             break
@@ -91,7 +91,7 @@ def time_stats(df):
     common_start_hour = df['hour'].mode()[0]
     print('Most Frequent Start Hour is :', common_start_hour)
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % round(time.time() - start_time, 3))
     print('-' * 40)
 
 
@@ -108,7 +108,7 @@ def station_stats(df):
     commonly_start_to_end_stat = df[['Start Station', 'End Station']].mode().loc[0]
     print('Most Frequent Combination of Start Station and End Station trip : {}, {}'
           .format(commonly_start_to_end_stat[0], commonly_start_to_end_stat[1]))
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % round(time.time() - start_time, 3))
     print('-' * 40)
 
 
@@ -122,7 +122,7 @@ def trip_duration_stats(df):
     print('Total Travel Time: ', total_time)
     mean_time = df['Trip Duration'].mean()
     print('Mean Travel Time: ', mean_time)
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % round(time.time() - start_time, 3))
     print('-' * 40)
 
 
@@ -151,7 +151,7 @@ def user_stats(df):
             print('Gender Stats can\'t be determined')
             break
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % round(time.time() - start_time, 3))
     print('-' * 40)
 
     view_data = input('\nWould you like to view 5 rows of individual trip data? Enter yes or no\n')
@@ -177,7 +177,6 @@ def main():
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
-
 
 if __name__ == "__main__":
     main()
