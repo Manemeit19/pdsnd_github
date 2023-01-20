@@ -8,6 +8,7 @@ Github Project for Udacity Programming with Python Nanodegree
 
 ### Description
 This is the third project the Programming with Python Nanodegree; posting to GitHub
+Includes a master branch, a documentation branch, and a refactoring branch
 
 ### Files used
 bikeshare2.py
